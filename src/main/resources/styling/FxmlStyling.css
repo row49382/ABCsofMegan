@@ -1,0 +1,8 @@
+.root {
+	-fx-font-size: 13pt;
+    -fx-font-family: "Calibri";
+}
+
+#word {
+    -fx-font-size: 26pt;
+}
