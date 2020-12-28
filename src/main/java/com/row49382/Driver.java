@@ -2,6 +2,7 @@ package com.row49382;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.row49382.controllers.DictionaryController;
+import com.row49382.models.DictionaryEntry;
 import com.row49382.models.MeganReadonlyDictionary;
 import com.row49382.models.ReadonlyDictionary;
 import javafx.application.Application;
@@ -9,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 
 public class Driver extends Application {
@@ -21,11 +23,14 @@ public class Driver extends Application {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/DictionaryView.fxml"));
             Parent mainPane = loader.load();
 
-            ReadonlyDictionary dictionary = new MeganReadonlyDictionary(new ObjectMapper(), PATH_TO_JSON_DICTIONARY_FILE);
+            ReadonlyDictionary<String, DictionaryEntry> dictionary = new MeganReadonlyDictionary(
+                    new ObjectMapper(),
+                    PATH_TO_JSON_DICTIONARY_FILE);
+
             DictionaryController controller = loader.getController();
             controller.setDictionary(dictionary);
 
-            Scene scene = new Scene(mainPane);
+            Scene scene = new Scene(mainPane, 800 ,500);
             scene.getStylesheets().add("/styling/FxmlStyling.css");
 
             primaryStage.setTitle(TITLE);
@@ -33,7 +38,8 @@ public class Driver extends Application {
             primaryStage.show();
         }
         catch(Exception e) {
-            Alert error = new Alert(Alert.AlertType.ERROR, e.getMessage() + "\n" + e.getCause() + "\n" + e.getStackTrace());
+            Alert error = new Alert(Alert.AlertType.ERROR, e.toString());
+            error.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
             error.showAndWait();
         }
     }

@@ -7,6 +7,11 @@ import javafx.scene.control.Slider;
  * letters by converting to the char value
  */
 public class AlphabetSlider extends Slider {
+
+    /**
+     * Creates the alphabet slider where the min value is 'a' and
+     * the max value is 'z' as integer values
+     */
     public AlphabetSlider() {
         super(65, 90, 65);
     }
@@ -20,7 +25,7 @@ public class AlphabetSlider extends Slider {
     }
 
     /**
-     * Adjust the slider until it matches the provided letter internal
+     * Adjust the slider until it matches the provided letter
      * @param letter The letter to adjust the slider to
      */
     public void adjustUntil(char letter) {
