@@ -1,12 +1,12 @@
 package com.row49382.components;
 
-import javafx.scene.control.Slider;
+import com.jfoenix.controls.JFXSlider;
 
 /**
  * Slider Concrete Class to wrap the number values as
  * letters by converting to the char value
  */
-public class AlphabetSlider extends Slider {
+public class AlphabetSlider extends JFXSlider {
 
     /**
      * Creates the alphabet slider where the min value is 'a' and

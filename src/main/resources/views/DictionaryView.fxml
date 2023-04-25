@@ -5,6 +5,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXButton?>
 <BorderPane id="root-pane" fx:id="mainPane" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.row49382.controllers.DictionaryController">
     <center>
         <SplitPane id="split-pane" fx:id="contentPane" dividerPositions="0.11487964989059081" layoutX="22.0" layoutY="15.0">
@@ -16,13 +19,13 @@
             </AnchorPane>
             <AnchorPane fx:id="dictionaryPane">
                 <VBox fx:id="dictionaryPaneVBox">
-                    <TextField id="word" fx:id="dictionaryWord" alignment="TOP_LEFT" editable="false" />
-                    <TextField fx:id="dictionaryPronunciation" alignment="TOP_LEFT" editable="false" />
-                    <TextArea fx:id="dictionaryDescription" editable="false" />
+                    <JFXTextField id="word" fx:id="dictionaryWord" alignment="TOP_LEFT" editable="false" />
+                    <JFXTextField fx:id="dictionaryPronunciation" alignment="TOP_LEFT" editable="false" />
+                    <JFXTextArea fx:id="dictionaryDescription" editable="false" />
                     <ButtonBar fx:id="dictionaryButtonBar">
                         <buttons>
-                            <Button fx:id="previousButton" text="Prev" />
-                            <Button fx:id="nextButton" layoutX="416.0" layoutY="17.0" prefHeight="25.0" prefWidth="150.0" text="Next" />
+                            <JFXButton fx:id="previousButton" text="Prev" />
+                            <JFXButton fx:id="nextButton" layoutX="416.0" layoutY="17.0" prefHeight="25.0" prefWidth="150.0" text="Next" />
                         </buttons>
                         <padding>
                             <Insets bottom="4.0" right="4.0" top="4.0" />

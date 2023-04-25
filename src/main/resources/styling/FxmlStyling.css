@@ -2,14 +2,33 @@
    -fx-font-size: 1.5em;
    -fx-font-family: "Calibri";
    -fx-border-insets: 0 0 0 0;
-   -fx-border-color: white white white white ;
-   -fx-padding: 15px;
 }
 
 #word {
     -fx-font-size: 3em;
 }
 
-#root-pane {
-   -fx-background-color: "#008080";
+.text-field {
+    -fx-padding: 5px;
+    -fx-border-insets: 5px;
+    -fx-background-insets: 5px;
+}
+
+.text-area {
+    -fx-padding: 5px;
+    -fx-border-insets: 5px;
+    -fx-background-insets: 5px;
+}
+
+.jfx-decorator {
+    -fx-decorator-color: purple;
+}
+
+.jfx-decorator .jfx-decorator-buttons-container {
+    -fx-background-color: -fx-decorator-color;
+}
+
+.jfx-decorator .resize-border {
+    -fx-border-color: -fx-decorator-color;
+    -fx-border-width: 0 4 4 4;
 }
