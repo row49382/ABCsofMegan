@@ -1,6 +1,7 @@
 package com.row49382;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jfoenix.controls.JFXDecorator;
 import com.row49382.controllers.DictionaryController;
 import com.row49382.models.DictionaryEntry;
 import com.row49382.models.MeganReadonlyDictionary;
@@ -30,7 +31,9 @@ public class Driver extends Application {
             DictionaryController controller = loader.getController();
             controller.setDictionary(dictionary);
 
-            Scene scene = new Scene(mainPane, 800 ,500);
+            JFXDecorator decorator = new JFXDecorator(primaryStage, mainPane);
+            decorator.setCustomMaximize(true);
+            Scene scene = new Scene(decorator, 800 ,500);
             scene.getStylesheets().add("/styling/FxmlStyling.css");
 
             primaryStage.setTitle(TITLE);

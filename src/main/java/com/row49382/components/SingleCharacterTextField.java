@@ -1,11 +1,11 @@
 package com.row49382.components;
 
-import javafx.scene.control.TextField;
+import com.jfoenix.controls.JFXTextField;
 
 /**
  * Text field that ensures only one character is provided
  */
-public class SingleCharacterTextField extends TextField {
+public class SingleCharacterTextField extends JFXTextField {
 
     public SingleCharacterTextField() {
         super("");

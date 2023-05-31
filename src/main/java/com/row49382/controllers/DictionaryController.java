@@ -1,5 +1,9 @@
 package com.row49382.controllers;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXSlider;
+import com.jfoenix.controls.JFXTextArea;
+import com.jfoenix.controls.JFXTextField;
 import com.row49382.components.AlphabetSlider;
 import com.row49382.models.DictionaryEntry;
 import com.row49382.models.ReadonlyDictionary;
@@ -37,28 +41,28 @@ public class DictionaryController {
     private VBox dictionaryPaneVBox;
 
     @FXML
-    private TextField dictionaryWord;
+    private JFXTextField dictionaryWord;
 
     @FXML
-    private TextField dictionaryPronunciation;
+    private JFXTextField dictionaryPronunciation;
 
     @FXML
-    private TextArea dictionaryDescription;
+    private JFXTextArea dictionaryDescription;
 
     @FXML
     private ButtonBar dictionaryButtonBar;
 
     @FXML
-    private Slider alphabetSlider;
+    private JFXSlider alphabetSlider;
 
     @FXML
-    private Button nextButton;
+    private JFXButton nextButton;
 
     @FXML
-    private Button previousButton;
+    private JFXButton previousButton;
 
     @FXML
-    private TextField currentLetterDisplay;
+    private JFXTextField currentLetterDisplay;
 
     public void setDictionary(ReadonlyDictionary<String, DictionaryEntry> dictionary) {
         this.dictionary = dictionary;
@@ -130,7 +134,7 @@ public class DictionaryController {
             this.alphabetSlider.decrement();
         });
 
-        this.dictionaryDescription.setWrapText(true);
+        //this.dictionaryDescription.setWrapText(true);
 
         this.bindForAutoResizing();
         this.setPreferredDimensions();
